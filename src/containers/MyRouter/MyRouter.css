@@ -7,11 +7,15 @@
   }
   
   a:link {
+    font-family: 'Futura-CondensedMedium';
     text-decoration: none;
+    font: caption;
+    font-weight: bold;
   }
   
   .Adarshlinkstyle {
     text-decoration: none;
+    font-family: 'Futura-CondensedMedium';
   }
 
   
