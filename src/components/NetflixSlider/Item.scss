@@ -1,0 +1,32 @@
+.item {
+  flex: 0 20%;
+  transition: transform 300ms ease 100ms;
+  // margin: 20px 20px;
+  
+  margin-top: 15vh;
+  margin-left: 4vw;
+  margin-bottom: 5vh;
+  position: relative;
+  justify-content: center;
+  vertical-align: center;
+  //box-shadow: 7px 7px 7px 0 rgba(0, 0, 0, 0.19), 7px 7px 7px 0 rgba(0, 0, 0, 0.19); //change from px to something not hardcoded
+  // padding: 4vh 2vw;
+  
+  
+  
+  
+
+  img {
+    height: 100%;
+    width: 100%;
+    top:10px;
+    bottom:10px;
+    vertical-align: middle;
+    border-color: transparent;
+    // border-radius: 12px;
+    // box-shadow: 2px 2px;
+    // box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+   
+    
+  }
+}

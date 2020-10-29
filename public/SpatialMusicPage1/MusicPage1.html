@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title> Spatial Music</title>
+
+
+<!-- https://cdn.jsdelivr.net/npm/material-components-web@0.29.0/dist/material-components-web.min.css -->
+
+
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Abel'>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/material-components-web@0.29.0/dist/material-components-web.min.css'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="page1" class="homepage" >
+    
+    <h1 id="titleid" >Spatial Audio</h1>
+    <div style="border-style:solid;border-color:white;padding-left:5px">
+<p style="text-align:left;color:white;font-family:'Share Tech Mono';'Andale Mono', monospace;">We often listen to music to alter how we perceive our surroundings. 
+More specifically, spatial elements within music affect how we experience the physical spaces we’re in and the stochastic events that occur within that space.
+  Emphasizing this relationship can make the experience of listening to music more immersive.</p>
+
+<p style="text-align:left;color:white;font-family:'Share Tech Mono';'Andale Mono', monospace;">What you’re about to experience is an interface that emphasizes the relationship between physical space, music production, and listening in which producers create AI-generated music by designing a physical space and the stochastic events within, which the listener then has the freedom to experience on their own spatial terms..</p></div>
+    <div style="text-align: center; border: 1px solid;padding-top:10px">
+    <button id="nextpage" value="button"><i class="fa fa-forward" style="text-align:center;"></i></button></div>
+       
+</div>
+<div class=" controls" id="controls" >
+    <div id="temperaturecontainer" style="background-color:#A9A9A9;border-style:none;border-color: white;display:block">
+<table style="background-color:#A9A9A9"><tr style="background-color:#A9A9A9"><td style="background-color:#A9A9A9">   
+    <button  id="playButton" style="background-color:#A9A9A9;border-color:#949494" >
+     <span><i class="fa fa-play-circle-o" title="Generate Music" style="background-color:#A9A9A9;font-size:24px" aria-hidden="true"></i></span>
+    </button></td>
+    <!--td><button id="stopplaying">Stop</button></td-->
+    <td><button  id="openpanning" style="background-color:#A9A9A9;border-color:#949494" >
+     <span><i class="fa fa-expand" title="Open 3D panning" style="background-color:#A9A9A9;font-size:24px" aria-hidden="true"></i></span>
+    </button></td>
+  <td><button  id="helpuser" style="background-color:#A9A9A9;border-color:#949494" >
+     <span><i class="fa fa-question" title="Mouse over on box, drag corners to re-size. Then click play to generate music" style="background-color:#A9A9A9;font-size:24px" aria-hidden="true"></i></span>
+    </button></td>
+    <td><button  id="homedesc" style="background-color:#ADADAD;border-color:#949494;hover:blue;" >
+     <span><i class="fa fa-home" title="Description" style="background-color:#A9A9A9;font-size:24px" aria-hidden="true"></i></span>
+    </button></td>
+    
+    </table>
+                             
+    
+    
+  </div>
+</div>
+
+
+</div>
+<div id="page2">
+<div id="mybox" class="topbox" style="border-style:none;background-color:#A9A9A9;">
+</div>
+
+<div class="container">
+
+    <div class="machine-bg">
+        <div class="player"></div>
+
+    </div>
+    <div class="human-bg" id="human-bg">
+        <div class="player">
+
+            <div class="keyboard">
+            </div>
+            <div class="loading">
+                Loading...
+            </div>
+        </div>
+    </div>
+</div>
+                                <div class='customAlert'>
+  <p class='message'></p>
+	<input type='button' class='confirmButton' value='Ok'>
+</div>
+</div>
+
+<!-- partial -->
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.js'></script> -->
+  <!--https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.js-->
+
+  <!-- <script src="./dependencies/three.js"></script> -->
+
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script> -->
+  <!--https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js-->
+
+  <script src="./dependencies/jquery-ui.min.js"></script>
+
+<!-- <script src='https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js'></script> -->
+  <!--https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js-->
+
+  <script src="./dependencies/lodash.min.js"></script>
+
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/85/three.min.js'></script> -->
+  <!--https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js-->
+  <script src="./dependencies/three.min.js"></script>
+
+<!--script src='https://cdn.jsdelivr.net/npm/tone@0.12.62/build/Tone.min.js'></script-->
+  
+  <script src="./dependencies//Tone.js"></script>
+
+  <script src="./dependencies/tone-ui.js"></script>
+
+  <script src="./dependencies/webcomponents-bundle.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.4.3/webcomponents-bundle.js"></script> -->
+
+  <script src="./dependencies/Tone.min.js"></script> 
+
+
+<!-- <script src='https://cdn.jsdelivr.net/npm/@magenta/music@1.1.11/dist/magentamusic.min.js'></script> -->
+  <!-- <https://cdn.jsdelivr.net/npm/@magenta/music@1.20.0/dist/magentamusic.min.js> -->
+  <script src="https://cdn.jsdelivr.net/npm/@magenta/music@1.0.0"></script>
+  <script src="./dependencies/magentamusic.min.js"></script>
+
+
+<!-- <script src='https://cdn.jsdelivr.net/npm/web-animations-js@2.3.1/web-animations.min.js'></script> -->
+<!--https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.2/web-animations.min.js-->
+<script src="./dependencies/web-animations.min.js"></script>
+
+<!-- <script src='https://cdn.jsdelivr.net/npm/webmidi@2.0.0/webmidi.min.js'></script> -->
+  <!--https://cdn.jsdelivr.net/npm/webmidi@2.5.1/webmidi.min.js-->
+<script src="./dependencies/webmidi.min.js"></script>
+
+
+<!-- <script src='https://cdn.jsdelivr.net/npm/audiokeys@0.1.1/dist/audiokeys.min.js'></script> -->
+  <!--https://cdn.jsdelivr.net/npm/audiokeys@0.1.1/src/AudioKeys.min.js-->
+  <script src="./dependencies/audiokeys.min.js"></script>
+
+<!-- <script src='https://cdn.jsdelivr.net/npm/startaudiocontext@1.2.1/StartAudioContext.min.js'></script> -->
+  <!--https://cdn.jsdelivr.net/npm/startaudiocontext@1.2.1/StartAudioContext.min.js-->
+  <script src="./dependencies/StartAudioContext.min.js"></script>
+
+
+<!-- <script src='https://cdn.jsdelivr.net/npm/material-components-web@0.29.0/dist/material-components-web.min.js'></script> -->
+  <!--https://cdn.jsdelivr.net/npm/material-components-web@7.0.0/dist/material-components-web.min.js-->
+  <script src="./dependencies/material-components-web.min.js"></script>
+
+<!-- <script src='https://cdn.jsdelivr.net/npm/babel-regenerator-runtime@6.5.0/runtime.min.js'></script> -->
+<script src="./dependencies/runtime.min.js"></script>
+
+<!-- <script src='https://cdn.rawgit.com/danigb/tonal/9b6b1663/dist/tonal.min.js'></script> -->
+<script src="./dependencies/tonal.min.js"></script>
+
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script> -->
+  <!--https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js-->
+<script src="./dependencies/jquery.min.js"></script>
+
+
+<!-- <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/127738/TrackballControls.js'></script> -->
+<script src="./dependencies/TrackballControls.js"></script>
+
+<script src="./dependencies/tonal.min.js.map"></script>
+
+<script  src="MusicScriptPage1.js"></script>
+
+</body>
+</html>

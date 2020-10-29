@@ -1,21 +1,43 @@
 {
   "name": "adarsh-nellore",
+  "homepage": "http://adarshnellore@github.io/adarsh-nellore",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/core": "^10.0.35",
+    "@emotion/styled": "^10.0.27",
+    "@material-ui/core": "^5.0.0-alpha.14",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.0",
+    "classnames": "^2.2.6",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.31",
+    "node-sass": "^4.14.1",
     "react": "^17.0.1",
+    "react-codepen-embed": "^1.0.1",
     "react-dom": "^17.0.1",
+    "react-hover-video-player": "^6.6.3",
+    "react-live-clock": "^5.0.11",
+    "react-moment": "^1.0.0",
+    "react-player": "^2.6.2",
+    "react-reveal": "^1.2.2",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
+    "react-scroll-parallax": "^2.3.4",
+    "react-text-loop": "^2.3.0",
+    "react-youtube": "^7.13.0",
+    "video-react": "^0.14.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +56,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
   }
 }
