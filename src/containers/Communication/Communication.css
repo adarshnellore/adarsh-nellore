@@ -1,0 +1,29 @@
+
+.container {
+    display: flex;
+    padding: 0 25px;
+  }
+  
+  .item {
+    background: transparent;
+    flex: 0 0 9.7%;
+    text-align: center;
+    margin: 0 2px;
+    transition: transform 300ms ease 100ms;
+  }
+  
+  /* .container:hover .item {
+    transform: translateX(-7.5%);
+    
+ }
+
+ .item:hover ~ .item {
+    transform: translateX(7.5%);
+ } */
+
+ .item:hover {
+    transform: scale(1.15) !important;
+    opacity: 0.9;
+    
+    /* box-shadow: "0 4px 6px 0 rgba(233, 212, 96, 1), 0 6px 20px 0 rgba(233, 212, 96, 1)" */
+  }

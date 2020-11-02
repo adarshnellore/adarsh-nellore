@@ -1,0 +1,93 @@
+body{
+  width: 100%;
+ 
+}
+
+.slider {
+  //padding: 5vh 2vw;
+  display: flex;
+  position: relative;
+  
+  z-index: 100;
+  // background: #ff88ff;
+  background-color: transparent;
+  // background-image: url('../../assets/SliderBackground.png');
+  display: flex;
+  
+  width: 100%;
+  // background: linear-gradient(to bottom, rgb(190, 208, 243), transparent); //add a background image
+  // margin-bottom: 8vh;
+  // margin-top: 4vh;
+
+  
+
+  
+  
+  
+  
+
+  &__container {
+    display: flex;
+    // padding: 2vh 4vw;
+    transition: transform 400ms ease 100ms;
+    
+    // background-color: rgb(241, 238, 238);
+    // opacity: 0.3;
+    z-index: 3;
+    width: 100%;
+    border: black;
+  }
+
+  &:not(&--open) .item:hover .show-details-button {
+    opacity: 1;
+    
+  }
+
+  &:not(&--open) .item:hover {
+    transform: scale(1.15) !important;
+    opacity: 0.85;
+    @keyframes float {
+      0% {
+        box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+        transform: translateY(0px);
+      }
+      50% {
+        box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+        transform: translateY(-20px);
+      }
+      100% {
+        box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+        transform: translateY(0px);
+      }
+    }
+    
+   
+  }
+
+  &:not(&--open):hover .item {
+    transform: translateX(0%);
+  }
+
+  &:not(&--open) .item:hover ~ .item {
+    transform: translateX(3.75%);
+  }
+
+
+
+
+  &:not(&--open) .item:click {
+    transform: scale(1.25) !important;
+    box-shadow: 15px 5px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 15px 0 rgba(0, 0, 0, 0.19);
+    opacity: 0.5;
+    
+  }
+
+  &:not(&--open):click .item {
+    transform: translateX(0%);
+  }
+
+  &:not(&--open) .item:click ~ .item {
+    transform: translateX(3.75%);
+  }
+}
+
